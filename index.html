@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Countries API</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countries API</title>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero__items">
+        <div class="hero__item item--brand">
+          <div class="brand-logo">
+            <span class="brand-logo--title">Where in the world?</span>
+          </div>
+        </div>
+
+        <div class="hero__item item--mode">
+          <div class="mode-toggle">
+            <label for="mode-toggle">
+              <span></span>
+              <input type="checkbox" name="dark mode">
+              Dark Mode
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="jd-countries">
+      <div class="container">
+        <div id="jd-countries" class="jd-countries__list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,79 @@
+:root {
+	--gunmetal: #2b3945;
+	--gunmetal-dark: #202c37;
+	--eerie-black: #111517;
+	--battleship: #858585;
+	--cultured: #f2f2f2;
+	--white-light: #fafafa;
+	--white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(---white);
+}
+
+/* general class */
+.container {
+	max-width: 1440px;
+	margin-inline: auto;
+	padding-inline: 3vw;
+}
+
+/* hero */
+.hero {
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.052);
+}
+
+.hero__items {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 2.4rem;
+}
+
+.hero__item {
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: var(--eerie-black);
+}
+
+.hero__item.item--brand {
+	font-size: 2.4rem;
+	font-weight: 800;
+}
+
+/* countries block */
+.jd-countries {
+	margin-block: 20px;
+	padding-block: 40px;
+}
+
+.jd-countries__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  column-gap: 60px;
+  row-gap: 60px;
+}
+
+/* countrie block */
+.jd-countrie {
+	position: relative;
+	width: 100%;
+}

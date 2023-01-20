@@ -1,11 +1,7 @@
 export async function listCountries() {
 	let htmlCountries = await renderCountries()
 
-	return `
-		List countries
-
-		${htmlCountries}
-	`
+	return `${htmlCountries}`
 }
 
 async function fetchCountries() {
@@ -32,12 +28,12 @@ async function renderCountries() {
 	await dataCountries.then((data) => {
 		data.forEach((countrie) => {
 			renderHtml += `
-				<article>
-					<figure>
-						<img src="${countrie.flags.png}" alt="${countrie.name.common} flag">
+				<article class="jd-countrie">
+					<figure class="jd-countrie-figure">
+						<img class="jd-countrie-figure--img" src="${countrie.flags.png}" alt="${countrie.name.common} flag">
 					</figure>
-					<aside>
-						<h2>${countrie.name.common}</h2>
+					<aside class="jd-countrie-text">
+						<h2 class="jd-countrie-text--title">${countrie.name.common}</h2>
 					</aside>
 				</article>
 			`
