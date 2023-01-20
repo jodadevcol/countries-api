@@ -7,17 +7,13 @@ export async function listCountries() {
 async function fetchCountries() {
 	const options = {
 		method: 'GET',
-		headers: {
-			'X-RapidAPI-Key': 'a7f342b9aemsh89aa9237b4df2b1p186775jsn27adb78d5dd1',
-			'X-RapidAPI-Host': 'ajayakv-rest-countries-v1.p.rapidapi.com',
-		},
 	}
 
 	try {
 		const response = await fetch('https://restcountries.com/v3.1/all', options)
 		return await response.json()
 	} catch (error) {
-		console.error(`Error. ${error}`)
+		console.error(`Error. ${error.message}`)
 	}
 }
 
@@ -27,6 +23,8 @@ async function renderCountries() {
 
 	await dataCountries.then((data) => {
 		data.forEach((countrie) => {
+			let capitals = 
+			
 			renderHtml += `
 				<article class="jd-countrie">
 					<figure class="jd-countrie-figure">
@@ -34,6 +32,22 @@ async function renderCountries() {
 					</figure>
 					<aside class="jd-countrie-text">
 						<h2 class="jd-countrie-text--title">${countrie.name.common}</h2>
+						<div>
+							<span>Population</span>
+							<span>${countrie.population}</span>
+						</div>
+						<div>
+							<span>Region</span>
+							<span>${countrie.region}</span>
+						</div>
+						<div>
+							<span>Capital</span>
+							${
+								countrie.capital.forEach(cap => {
+									cap
+								})
+							}
+						</div>
 					</aside>
 				</article>
 			`
